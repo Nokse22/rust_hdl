@@ -55,11 +55,11 @@ will need to be copied into the parent directory of the VHDL_LS binary manually.
 A language server is never used directly by the end user and it is integrated into different editor plugins. The ones I
 know about are listed here.
 
-## Use in VSCode
+### Use in VSCode
 
 https://github.com/Bochlin/rust_hdl_vscode
 
-## Use in emacs
+### Use in emacs
 
 VHDL LS has built-in support by emacs `lsp-mode` since 2020-01-04.
 
@@ -74,15 +74,15 @@ following snippet to your config:
 (vhdl-ext-lsp-set-server 've-rust-hdl)   ; `lsp' config
 ```
 
-## Installation for Neovim
+### Installation for Neovim
 
-### Automatic Installation
+#### Automatic Installation
 
 You can install `rust_hdl` automatically in Neovim using [`:Mason`](https://github.com/williamboman/mason.nvim). Within
 Mason, the package is called `rust_hdl`. If you don't have `:Mason`, you can simply install the binary as previously
 described.
 
-### Automatic Configuration using `nvim-lspconfig`
+#### Automatic Configuration using `nvim-lspconfig`
 
 [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) has a built in configuration
 for [`vhdl_ls`](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#vhdl_ls)
@@ -97,7 +97,7 @@ lspconfig['vhdl_ls'].setup({
 })
 ```
 
-### Manual Configuration using Neovim's built in client
+#### Manual Configuration using Neovim's built in client
 
 Neovim provides an LSP client to the VHDL_LS language server. Download the  
 VHDL_LS release. The binary must be on the path and executable (if you can run  
@@ -118,6 +118,10 @@ vim.api.nvim_set_keymap('n', '<F5>', ':lua STARTVHDLLS()<CR>', { noremap = true,
 Using the example above, pressing F5 while inside Neovim starts the language  
 server. There are also other options, like automatically starting it when  
 opening a certain file type, see the [Neovim LSP documentation](https://neovim.io/doc/user/lsp.html) for more.
+
+### Use in Gnome Builder
+
+If you have `vhdl_ls` installed on your system or container Builder will detect it and it will work automatically.
 
 ## Configuration
 
